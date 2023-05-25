@@ -5,7 +5,9 @@ const app = express();
 const PORT = 5000;
 
 app.get('/', function (req, res) {
-    res.send('Hello World')
+    client.query(`SELECT * FROM movie`, (err, result) => {
+        res.send(result.rows)
+    })
 })
 
 
