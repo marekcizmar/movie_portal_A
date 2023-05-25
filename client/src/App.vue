@@ -1,9 +1,12 @@
 <script setup>
 import Header from './components/Header.vue'
+import FilmContainer from './components/FilmContainer.vue';
 </script>
 
 <template>
-  <Header/>
+  <Header />
+  <FilmContainer />
+  
 </template>
 
 <style>
