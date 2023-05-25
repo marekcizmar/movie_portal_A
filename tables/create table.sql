@@ -1,4 +1,4 @@
-CREATE TABLE film(
+CREATE TABLE movie(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(255),
 	year INT,
