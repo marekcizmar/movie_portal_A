@@ -1,8 +1,5 @@
 import { reactive } from 'vue'
 
-export 
-
-/*
 export const moviesData = reactive(
     {
         list:[
@@ -89,4 +86,3 @@ export const moviesData = reactive(
         ]
     }
 )
-*/

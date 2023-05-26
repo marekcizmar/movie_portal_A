@@ -5,7 +5,7 @@
       <i class="fa fa-search text-white fa-lg"></i>   
     </button>
   </div>
-<form action="" class="flex-row flex ">
+<form action="" class="flex-row flex justify-between mx-28">
 <select id="genres" class="
 cursor-pointer
 
