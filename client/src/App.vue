@@ -1,9 +1,13 @@
 <script setup>
   import Header from './components/Header.vue'
+  import Content from './components/Content.vue'
+  import SearchBar from './components/Searchbar.vue'
 </script>
 
 <template>
   <Header/>
+  <Content/>
+  <SearchBar/>
 </template>
 
 <style>
@@ -30,5 +34,12 @@
     padding-bottom: 0.625rem;
   }
 
+  .border-15px{
+    border: 1rem solid #60a5fa;
+  }
+
+  .border-15px2{
+    border: 1rem solid #1e3a8a;
+  }
 
 </style>
