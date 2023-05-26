@@ -8,7 +8,7 @@ export default {
     },
     methods: {
         async getData(){
-            const res = await fetch('http://localhost:5000/')
+            const res = await fetch('http://localhost:5000/movie')
             const finalRes = await res.json()
             this.moviesData = finalRes
             console.log(finalRes)
