@@ -1,10 +1,10 @@
 
 const { client } = require('./database/clientConnection')
 const express = require('express')
-
+const cors = require("cors")
 const app = express();
 const PORT = 5000;
-
+app.use(cors())
 
 app.get('/', function (req, res) {
     client.query(`SELECT * FROM movie`, (err, result) => {

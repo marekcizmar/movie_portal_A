@@ -35,7 +35,7 @@ export default {
                 </div>
 
                 <div class="movie-length table-cell self-end">
-                    {{ movie.lenght }}min
+                    {{ movie.length }}min
                 </div>
 
                 <div class="movie-resolution table-cell self-end">
