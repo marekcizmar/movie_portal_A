@@ -6,7 +6,7 @@ CREATE TABLE movie(
 	summary TEXT,
 	image TEXT,
 	quality VARCHAR(100),
-	lenght INT
+	length INT
 );
 
 CREATE TABLE genre(
