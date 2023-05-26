@@ -1,11 +1,11 @@
 <template>
-  <div class="container mx-auto flex justify-center mt-24">
+  <div class="search-bar-container flex justify-center mt-24 mx-24">
     <input type="text" placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
     <button type="submit" class=" bg-blue-400 px-16 rounded-r-xl">
       <i class="fa fa-search text-white fa-lg"></i>   
     </button>
   </div>
-<form action="" class="flex-row flex ">
+<form action="" class="flex-row flex mx-24 justify-between">
 <select id="genres" class="
 cursor-pointer
 
@@ -31,3 +31,9 @@ flex-row
 </div>
 </form>
 </template>
+
+<style scoped>
+
+
+
+</style>
