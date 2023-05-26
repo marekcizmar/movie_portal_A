@@ -3,7 +3,8 @@
         <nav class="container mx-auto p-5">
             <main class="flex justify-between">
                 <div class="flex content-center">
-                    <h1 class="text-xl py-2-5 px-1"><a href="">NÁZOV</a></h1>
+                    <i class="fa fa-film text-5xl text-blue-400"></i>
+                    <h1 class="text-xl py-2-5 px-1 text-blue-900 pl-4 font-medium"><a href="">FilmFusion</a></h1>
                     <div class="border-left-1 ml-10 mr-10 py-2 px-1"></div>
                     <h1 class="nav_a animation"><a href="" class="px-4">Home</a></h1>
                     <h1 class="nav_a animation"><a href="" class="px-4">Movies</a></h1>
