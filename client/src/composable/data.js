@@ -1,10 +1,6 @@
 import { reactive } from 'vue'
 
-export 
-
-/*
-export const moviesData = reactive(
-    {
+export const moviesData = reactive({        
         list:[
             {
                 _id: 1,
@@ -89,4 +85,3 @@ export const moviesData = reactive(
         ]
     }
 )
-*/
