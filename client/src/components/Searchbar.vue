@@ -52,7 +52,12 @@ flex-row
 
 </select>
 <div class="slidecontainer">
-  <input type="range" min="2015" max="2018" value="2015" class="slider m-12" id="myRange">
+  <p class="absolute py-11 text-slate-400 ">Year:</p>
+  <input type="range" min="2015" max="2018" value="2015" class="slider absolute m-12 w-40" id="myRange">
+  <input type="range" min="2015" max="2018" value="2018" class="slider relative m-12 w-40" id="myRange2">
+  <br>
+  <p class="absolute px-10 -my-10 text-slate-400">2015</p>
+  <p class="absolute px-44 -my-10 text-slate-400 ">2018</p>
 </div>
 </form>
 </template>
