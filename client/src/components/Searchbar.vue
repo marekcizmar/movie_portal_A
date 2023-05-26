@@ -1,3 +1,27 @@
+<script>
+
+export default {
+    data(){
+        return{
+            moviesGeners: []
+        }
+    },
+    methods: {
+        async getDataGeners(){
+            const res = await fetch('http://localhost:5000/genre')
+            const finalRes = await res.json()
+            this.moviesGeners = finalRes
+            console.log(finalRes)
+        }
+    },
+    mounted(){
+        this.getDataGeners()
+    }
+}
+
+
+</script>
+
 <template>
   <div class="search-bar-container flex justify-center mt-24 mx-24">
     <input type="text" placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
