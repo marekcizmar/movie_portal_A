@@ -30,9 +30,8 @@ export default {
     </button>
   </div>
 <form action="" class="flex-row flex mx-24 justify-between">
-<select id="genres" class="
+<select  id="genres" class="
 cursor-pointer
-
 hover:bg-slate-100
 transition
 h-10
@@ -46,9 +45,11 @@ shadow-xl
 outline-none 
 flex-row 
 ">
-  <option selected class="">Genre</option>
-  <option value="1">Comedy</option>
+<option value="0">Main</option>
   
+  <option  v-for="genre in moviesGeners" value="@{{ genre.id }}">{{ genre.title }}</option>
+  
+
 </select>
 <div class="slidecontainer">
   <input type="range" min="2015" max="2018" value="2015" class="slider m-12" id="myRange">
