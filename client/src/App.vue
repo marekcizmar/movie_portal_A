@@ -2,12 +2,18 @@
   import Header from './components/Header.vue'
   import Content from './components/Content.vue'
   import SearchBar from './components/Searchbar.vue'
+  import Footer from './components/Footer.vue'
+  import Pages from './components/Pages.vue'
+  import FilmContainer from './components/FilmContainer.vue'
 </script>
 
 <template>
   <Header/>
   <Content/>
   <SearchBar/>
+  <FilmContainer/>
+  <Pages/>
+  <Footer/>
 </template>
 
 <style>
