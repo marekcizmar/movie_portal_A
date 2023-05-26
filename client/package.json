@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "fetch-jsonp": "^1.2.3",
+    "pg": "^8.11.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {

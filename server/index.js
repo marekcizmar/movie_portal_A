@@ -1,8 +1,10 @@
+
 const { client } = require('./database/clientConnection')
 const express = require('express')
 
 const app = express();
 const PORT = 5000;
+
 
 app.get('/', function (req, res) {
     client.query(`SELECT * FROM movie`, (err, result) => {
