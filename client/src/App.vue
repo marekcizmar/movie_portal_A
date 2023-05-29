@@ -84,8 +84,8 @@
   .border-15px2{
     border: 1rem solid #1e3a8a;
   }
-  .ml-buttons{
-    margin-left: 20.8rem;
+  .mr-buttons{
+    margin-right: 30.5rem;
   }
   .button-lightblue{
     background-color: #60a5fa;
