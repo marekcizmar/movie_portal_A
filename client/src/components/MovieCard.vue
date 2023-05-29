@@ -22,5 +22,9 @@ export default{
                 {{ movie.quality }}
             </div> 
         </span>
+        <span class="btn-container inline-flex w-48 justify-between" >
+            <button class="btn-remove-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded">Remove</button>
+            <button class="btn-update-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded">Update</button>
+        </span>
     </div>
 </template>
