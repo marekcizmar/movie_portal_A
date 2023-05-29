@@ -1,17 +1,54 @@
-<script setup>
+<script>
   import Header from './components/Header.vue'
   import Content from './components/Content.vue'
   import SearchBar from './components/Searchbar.vue'
   import Footer from './components/Footer.vue'
   import Pages from './components/Pages.vue'
   import FilmContainer from './components/FilmContainer.vue'
+
+  export default {
+    data(){
+        return{
+            moviesData: [],
+            moviesGeners: []
+        }
+    },
+    methods: {
+        async getData(){
+            const res = await fetch('http://localhost:5000/movie')
+            const finalRes = await res.json()
+            this.moviesData = finalRes
+            //console.log(finalRes)
+        },
+        async getDataGeners(){
+            const res = await fetch('http://localhost:5000/genre')
+            const finalRes = await res.json()
+            this.moviesGeners = finalRes
+            //console.log(finalRes)
+        }
+    },
+    mounted(){
+        this.getData()
+        this.getDataGeners()
+    },
+    components:{
+      Header,
+      Content,
+      SearchBar,
+      Footer,
+      Pages,
+      FilmContainer
+    }
+}
+
+
 </script>
 
 <template>
   <Header/>
   <Content/>
-  <SearchBar/>
-  <FilmContainer/>
+  <SearchBar :moviesGeners="moviesGeners"/>
+  <FilmContainer :moviesData="moviesData"/>
   <Pages/>
   <Footer/>
 </template>

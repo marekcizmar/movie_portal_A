@@ -1,22 +1,9 @@
 <script>
-export default {
-    data(){
-        return{
-            moviesGeners: []
-        }
-    },
-    methods: {
-        async getDataGeners(){
-            const res = await fetch('http://localhost:5000/genre')
-            const finalRes = await res.json()
-            this.moviesGeners = finalRes
-            console.log(finalRes)
-        }
-    },
-    mounted(){
-        this.getDataGeners()
-    }
-}
+
+export default{
+    props: ['moviesGeners'],
+};
+
 </script>
 
 <template>

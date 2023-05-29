@@ -1,22 +1,9 @@
 <script>
-export default {
-    data(){
-        return{
-            moviesData: []
-        }
-    },
-    methods: {
-        async getData(){
-            const res = await fetch('http://localhost:5000/movie')
-            const finalRes = await res.json()
-            this.moviesData = finalRes
-            console.log(finalRes)
-        }
-    },
-    mounted(){
-        this.getData()
-    }
-}
+
+export default{
+    props: ['moviesData'],
+};
+
 </script>
 
 <template>
