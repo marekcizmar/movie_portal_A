@@ -1,6 +1,6 @@
 <template>
     <div class="mt-24 container mx-auto ">
-      <div class="flex ml-buttons">
+      <div class="flex justify-center mr-buttons">
         <button
           :class="{
             'bg-blue-400': activeTab === 'tab1',
