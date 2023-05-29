@@ -20,6 +20,18 @@ app.get('/genre', function (req, res) {
 
 })
 
+app.delete('/movie/:id', function (req, res) {
+    const movieId = req.params.id;
+  
+    client.query('DELETE FROM movie WHERE id = $1', [movieId], (err, result) => {
+      if (err) {
+        console.error('Error deleting movie:', err);
+        res.status(500).json({ error: 'An error occurred while deleting the movie.' });
+      } else {
+        res.sendStatus(200);
+      }
+    });
+  });
 
 try {
     client.connect()
