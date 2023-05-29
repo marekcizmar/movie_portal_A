@@ -67,11 +67,7 @@
   * {
     font-family: 'Inter', sans-serif;
   }
-
-  .border-left-1 {
-    border-left: 1px solid rgb(225, 225, 225);
-  }
-
+  
   .py-2-5 {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
@@ -83,6 +79,15 @@
 
   .border-15px2{
     border: 1rem solid #1e3a8a;
+  }
+  .mr-buttons{
+    margin-right: 30.5rem;
+  }
+  .button-lightblue{
+    background-color: #60a5fa;
+  }
+  .button-darkblue{
+    background-color: #1e3a8a;
   }
 
 </style>
