@@ -12,7 +12,7 @@ export default {
             const res = await fetch('http://localhost:5000/movie')
             const finalRes = await res.json()
             this.moviesData = finalRes
-            console.log(finalRes)
+            //console.log(finalRes)
         },
         async deleteFilm(movie) {
     try {

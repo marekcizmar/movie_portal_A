@@ -25,7 +25,7 @@ export default {
             const res = await fetch('http://localhost:5000/movie')
             const finalRes = await res.json()
             this.$emit('update:moviesData', finalRes);
-            console.log(finalRes)
+            //console.log(finalRes)
         },
         handleOnOffMovie() {
             this.showModal = !this.showModal;
@@ -69,7 +69,7 @@ export default {
             console.log(newValue);
         },
         moviesData(newValue){ 
-            console.log(newValue);
+            //console.log(newValue);
         },
     }
 };

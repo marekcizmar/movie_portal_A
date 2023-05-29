@@ -1,21 +1,6 @@
 <script>
 export default {
-  data() {
-    return {
-      moviesGeners: [],
-    };
-  },
-  methods: {
-    async getDataGeners() {
-      const res = await fetch('http://localhost:5000/genre');
-      const finalRes = await res.json();
-      this.moviesGeners = finalRes;
-      console.log(finalRes);
-    },
-  },
-  mounted() {
-    this.getDataGeners();
-  },
+ props:['moviesGeners', 'allYears', 'maxYear', 'minYear'],
 }
 
 </script>
@@ -66,7 +51,8 @@ export default {
       relative
       left-[650px]
       ">
-    <option value="0">FROM: 2015</option>
+    <option value="0">FROM: {{ minYear }}</option>
+    <option v-for="year in allYears" :value="year">{{ year }}</option>
   </select>
 
   <select id="YearsTo" class="
@@ -84,7 +70,9 @@ export default {
       outline-none 
       flex-row
       ">
-      <option value="0">TO: 2022</option></select>
+      <option value="0">TO: {{ maxYear }}</option>
+      <option v-for="year in allYears" :value="year">{{ year }}</option>
+    </select>
       </form>
 </template> 
 
