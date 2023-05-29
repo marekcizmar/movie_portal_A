@@ -1,6 +1,7 @@
 <script>
 
 export default {
+    
     data(){
         return{
             moviesData: []
@@ -28,11 +29,19 @@ export default {
     } catch (error) {
       console.error('An error occurred:', error);
     }
-  }
+  },
+  updateMoviesData(updatedMoviesData) {
+      this.moviesData = updatedMoviesData;
+    }
     },
     mounted(){
         this.getData()
     },
+    watch: {
+        moviesData(newValue){
+            console.log(newValue);
+        },
+    }
   
 };
 

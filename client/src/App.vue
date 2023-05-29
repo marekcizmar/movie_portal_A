@@ -48,7 +48,7 @@
   <Header/>
   <Content/>
   <SearchBar :moviesGeners="moviesGeners"/>
-  <FilmContainer :moviesData="moviesData"/>
+  <FilmContainer :moviesData="moviesData" :moviesGeners="moviesGeners"/>
   <Pages/>
   <Footer/>
 </template>
