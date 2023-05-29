@@ -67,11 +67,7 @@
   * {
     font-family: 'Inter', sans-serif;
   }
-
-  .border-left-1 {
-    border-left: 1px solid rgb(225, 225, 225);
-  }
-
+  
   .py-2-5 {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
