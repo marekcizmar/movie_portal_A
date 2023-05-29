@@ -2,6 +2,16 @@
 
 export default{
     props: ['moviesGeners'],
+    data() {
+    return {
+      selectedGenre: 0
+    };
+  },
+  watch: {
+    selectedGenre(newValue) {
+      console.log(newValue);
+    }
+  }
 };
 
 </script>
@@ -15,9 +25,9 @@ export default{
       </button>
     </div>
     <form action="" class="flex-row flex mx-24 justify-between">
-      <select  id="genres" class="cursor-pointer hover:bg-slate-100 transition h-10 w-32 rounded-md m-10 text-slate-500 text-left border-none shadow-xl outline-none flex-row">
+      <select v-model="selectedGenre" id="genres" class="cursor-pointer hover:bg-slate-100 transition h-10 w-32 rounded-md m-10 text-slate-500 text-left border-none shadow-xl outline-none flex-row">
         <option value="0">Main</option>
-        <option  v-for="genre in moviesGeners" value="@{{ genre.id }}">{{ genre.title }}</option>
+        <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
       </select>
       <div class="slidecontainer">
         <p class="absolute py-11 text-slate-400 ">Year:</p>
