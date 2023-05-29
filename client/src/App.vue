@@ -84,5 +84,14 @@
   .border-15px2{
     border: 1rem solid #1e3a8a;
   }
+  .ml-buttons{
+    margin-left: 20.8rem;
+  }
+  .button-lightblue{
+    background-color: #60a5fa;
+  }
+  .button-darkblue{
+    background-color: #1e3a8a;
+  }
 
 </style>
