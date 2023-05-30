@@ -78,38 +78,43 @@ export default {
 </script>
 
 <template>
-    <div v-if="showModal" class="modal">
-        <div>
-            <label class="flex-row flex mx-24 justify-between">Film title</label><br>
-            <input type="text" v-model="title" id="title" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+    <div class="">
+        <div v-if="showModal" class="bg-slate-100 container mx-auto w-1/3 shadow-2xl">
+            <div class="flex flex-col justify-center  mx-10">
+                <label class="mt-5">Film title</label>
+                <input type="text" v-model="title" id="title" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="Type in a movie name">
 
-            <label class="flex-row flex mx-24 justify-between">Relese date</label><br>
-            <input type="number" v-model="releaseDate" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+                <label class="mt-5">Relese date</label>
+                <input type="number" v-model="releaseDate" class="mt-4 py-2 px-4 border border-slate-400 rounded">
 
-            <label class="flex-row flex mx-24 justify-between">Genre</label><br>
-            <form action="" class="flex-row flex mx-10 justify-between">
-               <select v-model="selectedGenre" id="genres" class="cursor-pointer hover:bg-slate-100 transition h-10 w-32 rounded-md m-5 text-slate-500 text-left border-none shadow-xl outline-none flex-row">
-                    <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
-                </select>
-            </form><br>
+                <label class="mt-5">Genre</label>
+                <form action="" class="">
+                <select v-model="selectedGenre" id="genres" class="mt-4 py-2 px-4 border border-slate-400 rounded w-full">
+                        <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
+                    </select>
+                </form>
 
-            <label class="flex-row flex mx-24 justify-between">Summary</label><br>
-            <input type="text" v-model="summary" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+                <label class="mt-5">Summary</label>
+                <input type="text" v-model="summary" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="Type in a brief summary">
 
-            <label class="flex-row flex mx-24 justify-between">Poster</label><br>
-            <input type="url" v-model="image" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+                <label class="mt-5">Poster</label>
+                <input type="url" v-model="image" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="URL">
 
-            <label class="flex-row flex mx-24 justify-between">Quality</label><br>
-            <input type="text"  v-model="quality" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+                <label class="mt-5">Quality</label>
+                <input type="text"  v-model="quality" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="HD | FHD | 4K">
 
-            <label class="flex-row flex mx-24 justify-between">Lenght</label><br>
-            <input type="number" v-model="length" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
-            
-            <button  class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleAddMovie">Submit</button>
+                <label class="mt-5">Length (min)</label>
+                <input type="number" v-model="length" class="mt-4 py-2 px-4 border border-slate-400 rounded">
+                
+                <div class="my-6 text-center">
+                    <button class="px-4 py-3 bg-red-400 border border-red-600 hover:bg-red-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white mr-5" @click="handleOnOffMovie">Cancel</button>
+                    <button  class="px-6 py-3 bg-green-400 border border-green-600 hover:bg-green-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white" @click="handleAddMovie">Save</button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="btn-cotainer inline-felx ml-24">
+        
+    <div class="">
         <button v-if="!showModal" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleOnOffMovie">Add Movie</button>
     </div>
     
@@ -117,13 +122,5 @@ export default {
         <div class="film-container flex flex-wrap justify-center max-w-6xl" onsubmit="setTimeout(function(){window.location.reload();},10);">
             <MovieCard :moviesData="moviesData"/>
         </div> 
-    </div> 
+    </div>
 </template>
-
-<style scoped>
-
-.film-container{
-    width: 120rem;
-}
-
-</style>
