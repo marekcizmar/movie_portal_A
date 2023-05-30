@@ -40,7 +40,9 @@ export default {
 
 <template>
     <div class="movie-container m-4" v-for="movie of moviesData" >
-        <img class="shadow-lg w-48 h-72" :src="movie.image" alt="">
+        <div class="bg-blue-400">
+            <a href=""><img class="shadow-lg w-48 h-72 hover:opacity-50 transition duration-150 ease-in-out" :src="movie.image" alt=""></a>
+        </div>
         <span class="movie-footer mt-3 flex justify-center gap-8">
             <div class="movie-relese-date self-end ">
                 {{ movie.year }}
