@@ -113,6 +113,7 @@ export default {
             <input type="text" v-model="trailer" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
             
             <button  class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleAddMovie">Submit</button>
+            <button  class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleOnOffMovie">Cancel</button>
         </div>
     </div>
 
