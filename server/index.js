@@ -54,6 +54,35 @@ app.delete('/movie/:id', function (req, res) {
     });
   });
 
+  app.put('/movie', function (req, res) {
+    const { id, title, year, genre, summary, image, quality, length, trailer, viewed, rated } = req.body;
+    const query = `
+      UPDATE movie
+      SET title = $2,
+          year = $3,
+          genre = $4,
+          summary = $5,
+          image = $6,
+          quality = $7,
+          length = $8,
+          trailer = $9,
+          viewed = $10,
+          rated = $11
+      WHERE id = $1;
+    `;
+  
+    const values = [id, title, year, genre, summary, image, quality, length, trailer, viewed, rated];
+  
+    client.query(query, values, (err, result) => {
+      if (err) {
+        console.error('Error updating movie:', err);
+        res.status(500).json({ error: 'An error occurred while updating the movie.' });
+      } else {
+        res.sendStatus(200);
+      }
+    });
+  });
+
 try {
     client.connect()
     app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
