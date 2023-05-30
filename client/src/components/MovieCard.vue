@@ -1,6 +1,7 @@
 <script>
 
 export default {
+    
     data(){
         return{
             moviesData: []
@@ -11,7 +12,7 @@ export default {
             const res = await fetch('http://localhost:5000/movie')
             const finalRes = await res.json()
             this.moviesData = finalRes
-            console.log(finalRes)
+            //console.log(finalRes)
         },
         async deleteFilm(movie) {
     try {
@@ -28,11 +29,19 @@ export default {
     } catch (error) {
       console.error('An error occurred:', error);
     }
-  }
+  },
+  updateMoviesData(updatedMoviesData) {
+      this.moviesData = updatedMoviesData;
+    }
     },
     mounted(){
         this.getData()
     },
+    watch: {
+        moviesData(newValue){
+            console.log(newValue);
+        },
+    }
   
 };
 
