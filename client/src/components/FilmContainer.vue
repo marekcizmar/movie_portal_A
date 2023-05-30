@@ -13,7 +13,10 @@ export default {
             summary: '',
             image: '',
             quality: '',
-            length: 100
+            length: 100,
+            trailer:'',
+            viewed:0,
+            rated:0
         };
     },
     components: {
@@ -39,7 +42,10 @@ export default {
                 summary: this.summary,
                 image: this.image,
                 quality: this.quality,
-                length: this.length
+                length: this.length,
+                trailer:this.trailer,
+                viewed:0,
+                rated:0
             };
             
             fetch('http://localhost:5000/movie', {
@@ -73,8 +79,6 @@ export default {
         },
     }
 };
-//title, year, genre, summary, image,quality,"length"
-
 </script>
 
 <template>
@@ -104,6 +108,9 @@ export default {
 
             <label class="flex-row flex mx-24 justify-between">Lenght</label><br>
             <input type="number" v-model="length" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
+            
+            <label class="flex-row flex mx-24 justify-between">Trailer</label><br>
+            <input type="text" v-model="trailer" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3"><br>
             
             <button  class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleAddMovie">Submit</button>
         </div>
