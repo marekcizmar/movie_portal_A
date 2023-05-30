@@ -13,7 +13,10 @@ export default {
             summary: '',
             image: '',
             quality: '',
-            length: 100
+            length: 100,
+            trailer:'',
+            viewed:0,
+            rated:0
         };
     },
     components: {
@@ -39,7 +42,10 @@ export default {
                 summary: this.summary,
                 image: this.image,
                 quality: this.quality,
-                length: this.length
+                length: this.length,
+                trailer:this.trailer,
+                viewed:0,
+                rated:0
             };
             
             fetch('http://localhost:5000/movie', {
@@ -73,8 +79,6 @@ export default {
         },
     }
 };
-//title, year, genre, summary, image,quality,"length"
-
 </script>
 
 <template>

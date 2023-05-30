@@ -38,11 +38,11 @@ app.delete('/movie/:id', function (req, res) {
 
   app.post('/movie', function (req, res) {
       console.log(req.body)
-    const { title, year, genre, summary, image, quality, length } = req.body;
-    const query = `INSERT INTO movie (title, year, genre, summary, image, quality, length)
-                   VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+    const { title, year, genre, summary, image, quality, length, trailer, viewed, rated } = req.body;
+    const query = `INSERT INTO movie (title, year, genre, summary, image, quality, length ,trailer, viewed, rated)
+                   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
   
-    const values = [title, year, genre, summary, image, quality, length];
+    const values = [title, year, genre, summary, image, quality, length, trailer, viewed, rated];
   
     client.query(query, values, (err, result) => {
       if (err) {
