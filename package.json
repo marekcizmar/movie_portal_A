@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@nuxtjs/router": "^1.7.0",
-    "vue-router": "^4.2.2"
-  }
-}
