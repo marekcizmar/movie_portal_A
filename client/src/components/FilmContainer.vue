@@ -13,7 +13,7 @@ export default {
             summary: '',
             image: '',
             quality: '',
-            length: 100,
+            length: 0,
             trailer:'',
             viewed:0,
             rated:0
@@ -32,6 +32,14 @@ export default {
         },
         handleOnOffMovie() {
             this.showModal = !this.showModal;
+            this.title=''
+            this.releaseDate=2015
+            this.selectedGenre=0
+            this.summary=''
+            this.image=''
+            this.quality=''
+            this.length=0
+            this.trailer=''
         },
         async handleAddMovie() {
             this.showModal = !this.showModal;
