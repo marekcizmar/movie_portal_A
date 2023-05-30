@@ -130,7 +130,7 @@ export default {
     </div>
         
     <div class="">
-        <button v-if="!showModal" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3" @click="handleOnOffMovie">Add Movie</button>
+        <button v-if="!showModal" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded ml-3 m-3" @click="handleOnOffMovie">Add Movie</button>
     </div>
     
     <div class="flex justify-center">
