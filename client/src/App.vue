@@ -127,5 +127,10 @@
   .button-darkblue{
     background-color: #1e3a8a;
   }
-
+  .border-1{
+    border-width: 1px;
+  }
+  .border-l-1 {
+    border-left-width: 1px;
+  }
 </style>
