@@ -109,6 +109,9 @@ export default {
 
                 <label class="mt-5">Length (min)</label>
                 <input type="number" v-model="length" class="mt-4 py-2 px-4 border border-slate-400 rounded">
+
+                <label class="mt-5">Trailer</label>
+                <input type="url" v-model="trailer" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="URL">
                 
                 <div class="my-6 text-center">
                     <button class="px-4 py-3 bg-red-400 border border-red-600 hover:bg-red-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white mr-5" @click="handleOnOffMovie">Cancel</button>
