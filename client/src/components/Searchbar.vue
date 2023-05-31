@@ -9,7 +9,9 @@ export default {
           
           moviesGeners: [],
           search:'',
-          filtered:this.moviesData
+          filtered:this.moviesData,
+          selectedGenre:0,
+          n:0,
         };
     },props:['moviesGeners', 'allYears', 'maxYear', 'minYear','moviesData','handleOnOffMovie','modal','handleAddMovie','filtered','getData'],
 
@@ -20,6 +22,9 @@ export default {
       const search = this.search;
   
   switch (search) {
+    case '0':
+    this.filtered = this.moviesData
+    break;
     case 'akcion':
     this.filtered = this.moviesData.filter((movie) => 
     movie.genre == 1 
@@ -82,7 +87,10 @@ export default {
   for (let index = 0; index < this.filtered.length; index++) {
     console.log(this.filtered[index].title);
   }
+  this.search=''
 },
+
+
   },
   components: {
     AddMovie,
@@ -94,7 +102,12 @@ export default {
     },
     find(){
       
-    }
+    },
+    selectedGenre(newValue) {
+            console.log(newValue);
+            this.search=newValue
+            this.find(newValue);
+        },
   },
   mounted() {
     this.find(); 
@@ -113,10 +126,12 @@ export default {
       </button>
     </div>
     <form action="" class="flex justify-between mt-6">
-      <select id="genres" class="border border-slate-400 rounded-md cursor-pointer px-3 py-2 text-slate-400 focus:text-black transition-colors">
-        <option value="0">All</option>
-        <option v-for="genre in moviesGeners" :value="genre.id">{{ genre.title }}</option>
-      </select>
+      <form action="" class="">
+        <select v-model="selectedGenre" id="genres" class="mt-4 py-2 px-4 border border-slate-400 rounded w-full">
+            <option value="0">All</option>
+            <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
+          </select>
+      </form>
       <div>
         <select id="YearsFrom" class="">
           <option value="0">FROM: {{ minYear }}</option>
