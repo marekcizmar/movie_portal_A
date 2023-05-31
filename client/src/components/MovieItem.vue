@@ -80,9 +80,9 @@ export default {
     updateMoviesOnOff(){
         this.showModal = !this.showModal;
     },
-  updateMoviesData(updatedMoviesData) {
+    updateMoviesData(updatedMoviesData) {
       this.moviesData = updatedMoviesData;
-    }
+    },
     },
     mounted(){
         this.getData()
@@ -96,9 +96,11 @@ export default {
     <div v-if="!showModal">
         <div class="relative">
             <a href="" class=""><img class="shadow-lg w-48 h-72 hover:opacity-50 transition duration-150 ease-in-out" :src="movie.image" alt=""></a>
-            <div class="absolute top-0 h-full w-full opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
-                <p class="mt-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore in, itaque nulla temporibus voluptas saepe porro.</p>
-                <a href="" class=""><p class="mt-20 py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</p></a>
+            <div class="absolute h-72 top-0 opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
+                <div class="relative h-60">
+                    <p class="my-6">{{ (movie.summary).slice(0, 120) }}...</p>
+                    <a href="" class=""><p class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</p></a>
+                </div>
             </div>
         </div>
         <span class="movie-footer mt-3 flex justify-center gap-8">
