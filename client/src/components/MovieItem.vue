@@ -2,7 +2,7 @@
 
 export default {
     
-    data(){//title, year, genre, summary, image,quality,"length",trailer
+    data(){
         return{
             movie: {},
             showModal: false,
