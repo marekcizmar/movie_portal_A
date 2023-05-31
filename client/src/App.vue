@@ -6,6 +6,7 @@ import Footer from "./components/Footer.vue";
 import Pages from "./components/Pages.vue";
 import MovieCard from "./components/MovieCard.vue";
 import AddMovie from "./components/AddMovie.vue";
+import CookieBanner from "./components/CookieBanner.vue";
 
 export default {
   data() {
@@ -127,6 +128,7 @@ export default {
     Pages,
     MovieCard,
     AddMovie,
+    CookieBanner,
   },
   watch: {
     selectedGenre() {},
@@ -153,7 +155,7 @@ export default {
     :modal="modal"
     :handleAddMovie="handleAddMovie"
   />
-  
+  <CookieBanner />
   
   <div class="flex justify-center">
     <div
@@ -165,6 +167,7 @@ export default {
   </div>
   <Pages />
   <Footer />
+  
 </template>
 
 <style>
