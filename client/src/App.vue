@@ -26,6 +26,7 @@ export default {
       trailer: "",
       viewed: 0,
       rated: 0,
+      
     };
   },
   methods: {
@@ -53,7 +54,8 @@ export default {
         trailer: this.trailer,
         viewed: 0,
         rated: 0,
-      };
+        
+        };
 
       await fetch("http://localhost:5000/movie", {
         method: "POST",
@@ -111,6 +113,8 @@ export default {
       this.allYears = [...new Set(this.moviesData.map((movie) => movie.year))];
       //console.log(this.allYears);
     },
+
+    
   },
   mounted() {
     this.getData();
@@ -152,17 +156,9 @@ export default {
     :handleOnOffMovie="handleOnOffMovie"
     :modal="modal"
     :handleAddMovie="handleAddMovie"
+    :getData="getData"
+    
   />
-  
-  
-  <div class="flex justify-center">
-    <div
-      class="film-container flex flex-wrap justify-center max-w-6xl"
-      onsubmit="setTimeout(function(){window.location.reload();},10);"
-    >
-      <MovieCard :moviesData="moviesData" :moviesGeners="moviesGeners" />
-    </div>
-  </div>
   <Pages />
   <Footer />
 </template>
