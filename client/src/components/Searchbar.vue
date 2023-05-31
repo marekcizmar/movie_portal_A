@@ -1,44 +1,113 @@
 <script>
+import AddMovie from './AddMovie.vue';
+
+
 export default {
- props:['moviesGeners', 'allYears', 'maxYear', 'minYear'],
+  data() {
+        return {
+          moviesData: [],
+          moviesGeners: [],
+          search:'',
+          filtered:this.moviesData
+        };
+    },
+  props:['moviesGeners', 'allYears', 'maxYear', 'minYear','moviesData','filtered','handleOnOffMovie','modal','handleAddMovie'],
+  methods: {
+    
+        find() {
+  const search = this.search;//title, year, genre, summary, image,quality,"length",trailer
+  
+  switch (search) {
+    case 'akcion':
+    this.filtered = this.moviesData.filter((movie) => 
+    movie.genre == 1 
+  );
+      console.log(this.search)
+      break;
+    case 'fantasi':
+    this.search=2
+      break;
+    case 'horror':
+    this.search=3
+      break;
+    case 'science fiction':
+    this.search=4
+      break;
+    case 'mystery':
+    this.search=5
+      break;
+    case 'comedy':
+    this.search=6
+      break;
+    case 'thriller':
+    this.search=7
+      break;
+    case 'animated':
+    this.search=8
+      break;
+    default:
+      break;
+  }
+  
+  this.filtered = this.moviesData.filter((movie) => 
+    movie.title == search ||
+    movie.id == search ||
+    movie.year == search ||
+    movie.genre == search ||
+    movie.summary == search ||
+    movie.quality == search ||
+    movie.length == search
+  );
+  for (let index = 0; index < this.filtered.length; index++) {
+    console.log(this.filtered[index].title);
+  }
+  
+},
+  },
+  components: {
+    AddMovie
+  },
+  watch: {
+    filtered() {
+      // The component will automatically re-render when the filtered array changes
+    }
+  }
 }
+
+
 </script>
 
 <template>
-  <div class="container mx-auto mt-28">
-    <div class="flex justify-center ">
-      <i class="fa fa-film text-8xl text-blue-400"></i>
-      <h1 class="text-3xl pt-7 text-blue-900 pl-6 font-medium"><a href="">FilmFusion</a></h1>
-    </div>
-    <div class="flex justify-center pt-10">
-      <input type="text" placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
-      <button type="submit" class="bg-blue-400 px-16 rounded-r-xl">
+  <div class="container mx-auto">
+    <div class="flex justify-center mt-24">
+      <input type="text" onkeyup='find()' v-model="search" placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
+      <button type="submit" class="bg-blue-400 px-16 rounded-r-xl" @click="find">
         <i class="fa fa-search text-white fa-lg"></i>
       </button>
     </div>
-    <form action="" class="flex mt-6">
-      <div class="pr-3 pt-2">Genres: </div>
-      <select id="genres" class="border border-slate-400 rounded-lg cursor-pointer px-3 py-2 text-slate-400 focus:text-black transition-colors">
+    <form action="" class="flex justify-between mt-6">
+      <select id="genres" class="border border-slate-400 rounded-md cursor-pointer px-3 py-2 text-slate-400 focus:text-black transition-colors">
         <option value="0">All</option>
         <option v-for="genre in moviesGeners" :value="genre.id">{{ genre.title }}</option>
       </select>
-      <div class="flex ml-7">
-          <div class="mt-2 mr-4">Years:</div>
-          <div class="flex border-1 border-slate-400 rounded-lg px-3">
-          <div class="mt-2 font-medium">FROM:</div>
-          <select id="YearsFrom" class="">
-            <option value="0"> {{ minYear }}</option>
-            <option v-for="year in allYears" :value="year">{{ year }}</option>
-          </select>
-
-        <div class="pt-2 ml-3 font-medium border-l-1 border-slate-400  pl-3" > TO:</div>
+      <div>
+        <select id="YearsFrom" class="">
+          <option value="0">FROM: {{ minYear }}</option>
+          <option v-for="year in allYears" :value="year">{{ year }}</option>
+        </select>
         <select id="YearsTo" class="">
-          <option value="0"> {{ maxYear }}</option>
+          <option value="0">TO: {{ maxYear }}</option>
           <option v-for="year in allYears" :value="year">{{ year }}</option>
         </select>
       </div>
-    </div>
     </form>
   </div>
-</template> 
-
+  <AddMovie 
+    :moviesGeners="moviesGeners"
+    :allYears="allYears"
+    :maxYear="maxYear"
+    :minYear="minYear"
+    :handleOnOffMovie="handleOnOffMovie"
+    :modal="modal"
+    :handleAddMovie="handleAddMovie"/>
+</template>

@@ -13,6 +13,6 @@ export default {
 
 <template>
     <div class="movie-container m-4" v-for="movie of moviesData" :key="movie.id">
-    <MovieItem :movie="movie" :moviesGeners="moviesGeners"/> 
-  </div>
+      <MovieItem :movie="movie" :moviesGeners="moviesGeners"/> 
+    </div>
 </template>
