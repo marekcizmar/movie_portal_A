@@ -1,17 +1,17 @@
 <template>
     <div>
-        <div class="flex justify-center space-x-1 my-10">
-            <button class="w-8 h-9 drop-shadow-xl rounded-md hover:bg-cyan-400 border-width:10px border-black shadow  dark:bg-gray-800">
-                <p class="text-base hover:text-white">1</p>
+        <div class="flex justify-center space-x-3 my-10">
+            <button class="px-3 py-2 rounded-md bg-blue-400 text-white shadow-xl">
+                1
             </button>
-            <button class=" w-8 h-9 drop-shadow-xl rounded-md hover:bg-cyan-400 border-width:2px border-black shadow  dark:bg-gray-800">
-                <p class="text-base hover:text-white">2</p>
+            <button class="px-3 bg-gray-100 rounded-md hover:bg-blue-400 hover:text-white hover:shadow-xl transition duration-150 ease-in-out">
+                2
             </button>
-            <button class=" w-8 h-9 drop-shadow-xl rounded-md hover:bg-cyan-400 border-width:2px border-black shadow  dark:bg-gray-800">
-                <p class="text-base hover:text-white">3</p>
+            <button class="px-3 bg-gray-100 rounded-md hover:bg-blue-400 hover:text-white hover:shadow-xl transition duration-150 ease-in-out">
+                3
             </button>
-            <button class=" w-8 h-9 drop-shadow-xl rounded-md hover:bg-cyan-400 border-width:2px border-black shadow  dark:bg-gray-800">
-                <p class="text-base hover:text-white">></p>
+            <button class="px-3 bg-gray-100 rounded-md hover:bg-blue-400 hover:text-white hover:shadow-xl transition duration-150 ease-in-out">
+                ->
             </button>
         </div>
     </div>

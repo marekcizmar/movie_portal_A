@@ -116,8 +116,8 @@ export default {
         </span>
         </div>
 
-        <div v-if="showModal" class="bg-slate-100 container mx-auto  shadow-2xl">
-            <div class="flex flex-col justify-center  mx-10">
+        <div v-if="showModal" class="bg-slate-100 container mx-auto shadow-2xl">
+            <div class="flex flex-col justify-center mx-10">
                 <label class="mt-5">Film title</label>
                 <input type="text" v-model="title" id="title" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="Type in a movie name">
 
