@@ -5,8 +5,12 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <div class="flex justify-center mt-24">
+  <div class="container mx-auto mt-28">
+    <div class="flex justify-center ">
+      <i class="fa fa-film text-8xl text-blue-400"></i>
+      <h1 class="text-3xl pt-7 text-blue-900 pl-6 font-medium"><a href="">FilmFusion</a></h1>
+    </div>
+    <div class="flex justify-center pt-10">
       <input type="text" placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
       <button type="submit" class="bg-blue-400 px-16 rounded-r-xl">
         <i class="fa fa-search text-white fa-lg"></i>
