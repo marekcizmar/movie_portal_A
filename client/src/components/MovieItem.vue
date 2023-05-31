@@ -94,8 +94,12 @@ export default {
 
 <template>
     <div v-if="!showModal">
-            <div class="bg-blue-400">
-            <a href=""><img class="shadow-lg w-48 h-72 hover:opacity-50 transition duration-150 ease-in-out" :src="movie.image" alt=""></a>
+        <div class="relative">
+            <a href="" class=""><img class="shadow-lg w-48 h-72 hover:opacity-50 transition duration-150 ease-in-out" :src="movie.image" alt=""></a>
+            <div class="absolute top-0 h-full w-full opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
+                <p class="mt-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore in, itaque nulla temporibus voluptas saepe porro.</p>
+                <a href="" class=""><p class="mt-20 py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</p></a>
+            </div>
         </div>
         <span class="movie-footer mt-3 flex justify-center gap-8">
             <div class="movie-relese-date self-end ">
