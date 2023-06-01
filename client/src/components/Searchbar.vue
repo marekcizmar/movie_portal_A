@@ -149,8 +149,12 @@ export default {
 </script>
 
 <template>
+  <div id="movies1" class="flex justify-center pt-32">
+    <i class="fa fa-film text-8xl text-blue-400"></i>
+    <h1 class="text-3xl pt-7 text-blue-900 pl-6 font-medium"><a href="">FilmFusion</a></h1>
+  </div>
   <div class="container mx-auto">
-    <div class="flex justify-center mt-24">
+    <div class="flex justify-center pt-12">
       <input type="text" v-model="search"  placeholder="Search for a movie..." class="border border-slate-400 rounded-l-xl p-5 w-full">
       <button type="submit" class="bg-blue-400 px-16 rounded-r-xl" @click="find" >
         <i class="fa fa-search text-white fa-lg"></i>
@@ -158,12 +162,14 @@ export default {
     </div>
     <form action="" class="flex justify-between mt-4">
       <div class="flex">
+        <h1 class="mr-4 mt-6">Genres: </h1>
         <form action="" class="">
           <select v-model="selectedGenre" id="genres" class="mt-4 py-2 px-4 border border-slate-400 rounded mr-6">
               <option value="0">All</option>
               <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
             </select>
         </form>
+        <h1 class="ml-3 mr-4 mt-6">Years: </h1>
         <div>
           <div class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2">
               FROM:

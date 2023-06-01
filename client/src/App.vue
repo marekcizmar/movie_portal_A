@@ -3,7 +3,6 @@ import Header from "./components/Header.vue";
 import Content from "./components/Content.vue";
 import SearchBar from "./components/Searchbar.vue";
 import Footer from "./components/Footer.vue";
-import Pages from "./components/Pages.vue";
 import MovieCard from "./components/MovieCard.vue";
 import AddMovie from "./components/AddMovie.vue";
 import CookieBanner from "./components/CookieBanner.vue";
@@ -131,7 +130,6 @@ export default {
     Content,
     SearchBar,
     Footer,
-    Pages,
     MovieCard,
     AddMovie,
     CookieBanner,
@@ -174,7 +172,6 @@ export default {
       
     </div>
   </div>
-  <Pages />
   <Footer />
   
 </template>
@@ -189,6 +186,8 @@ export default {
     @apply mr-4 hover:text-blue-600 hover:bg-slate-50 transition duration-150 ease-in-out py-3 px-1 rounded-xl;
   }
 }
+
+html {scroll-behavior: smooth;}
 
 * {
   font-family: "Inter", sans-serif;

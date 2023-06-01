@@ -1,13 +1,13 @@
 <template>
-    <div class="mt-24 container mx-auto ">
-      <div class="flex justify-center mr-buttons">
+    <div id="home" class="mt-24 pt-12 container mx-auto">
+      <div class="flex justify-center mr-buttons pt-10">
         <button
           :class="{
             'bg-blue-400': activeTab === 'tab1',
             'button-lightblue': activeTab !== 'tab1'
           }"
           @click="activeTab = 'tab1'"
-          class="py-2 px-4 w-48 py-3 rounded-t-lg text-white">
+          class="py-3 px-4 w-48 rounded-t-lg text-white">
         MOST WATCHED
         </button>
         <button
@@ -16,7 +16,7 @@
             'button-darkblue': activeTab !== 'tab2'
           }"
           @click="activeTab = 'tab2'"
-          class="py-2 px-4 w-48 py-3 rounded-t-lg text-white">
+          class="py-3 px-4 w-48 rounded-t-lg text-white">
         TOP RATED
         </button>
       </div>
