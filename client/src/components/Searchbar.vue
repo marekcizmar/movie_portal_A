@@ -166,20 +166,18 @@ export default {
         </form>
         <div>
           <div class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2">
-            FROM:
-          <select id="YearsFrom"  v-model="minimalYear">
-          <!-- <option value="0">{{ minYear }}</option> -->
-          <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
-          </select>
+              FROM:
+            <select id="YearsFrom"  v-model="minimalYear">
+              <option v-for="year in allYears.slice().reverse()" :value="year" :key="year">{{ year }}</option>
+            </select>
         </div>
         </div>
         <div>
           <div class="mt-4 py-2 px-4 border border-slate-400 rounded">
-            TO: 
+              TO: 
             <select id="YearsTo"  v-model="maximalYear">
-            <!-- <option value="0">{{ maxYear }}</option> -->
-            <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
-          </select>
+              <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
+            </select>
           </div>
           
         </div>
