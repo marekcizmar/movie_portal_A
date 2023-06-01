@@ -19,6 +19,24 @@ export default {
     
     props: ['moviesGeners', 'moviesData','handleOnOffMovie','modal','handleAddMovie'],
     methods: { 
+        saveMovie(){
+            const body = {
+            selectedGenre:  this.selectedGenre,
+            title:  this.title,
+            releaseDate:  this.releaseDate,
+            summary:  this.summary,
+            image:  this.image,
+            quality:  this.quality,
+            length:  this.length,
+            trailer: this.trailer,
+            viewed: this.viewed,
+            rated: this.rated,
+            }
+
+            this.handleAddMovie(body)
+            console.log(body)
+            window.location.reload()
+        }
     },
     
     watch: {
@@ -28,6 +46,11 @@ export default {
         moviesData(newValue){ 
             //console.log(newValue);
         },
+        saveMovie(){
+            this.moviesData()
+        }
+    },
+    mounted(){
     }
 };
 </script>
@@ -66,7 +89,7 @@ export default {
                 
                 <div class="my-6 text-center">
                     <button class="px-4 py-3 bg-red-400 border border-red-600 hover:bg-red-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white mr-5" @click="handleOnOffMovie">Cancel</button>
-                    <button  class="px-6 py-3 bg-green-400 border border-green-600 hover:bg-green-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white" @click="handleAddMovie">Save</button>
+                    <button  class="px-6 py-3 bg-green-400 border border-green-600 hover:bg-green-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white" @click="saveMovie">Save</button>
                 </div>
             </div>
         </div>

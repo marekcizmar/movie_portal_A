@@ -42,17 +42,17 @@ export default {
       const finalRes = await res.json();
       this.moviesGeners = finalRes;
     },
-    async handleAddMovie() {
+    async handleAddMovie(body) {
       this.showModal = !this.showModal;
       const movieData = {
-        title: this.title,
-        year: this.releaseDate,
-        genre: this.selectedGenre,
-        summary: this.summary,
-        image: this.image,
-        quality: this.quality,
-        length: this.length,
-        trailer: this.trailer,
+        title: body.title,
+        year: body.releaseDate,
+        genre: body.selectedGenre,
+        summary: body.summary,
+        image: body.image,
+        quality: body.quality,
+        length: body.length,
+        trailer: body.trailer,
         viewed: 0,
         rated: 0,
         
@@ -65,8 +65,10 @@ export default {
         },
         body: JSON.stringify(movieData),
       })
-      console.log("getData")
-        this.getData()
+    },
+    saveMovie(body){
+      this.handleAddMovie(body)
+      this.componentKey++
     },
     handleOnOffMovie() {
       this.showModal = !this.showModal;
@@ -78,7 +80,7 @@ export default {
       this.quality = "";
       this.length = 0;
       this.trailer = "";
-      console.log(this.showModal)
+      this.getData()
       
     },
     modal(){

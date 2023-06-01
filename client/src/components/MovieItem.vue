@@ -42,6 +42,7 @@ export default {
     } catch (error) {
       console.error('An error occurred:', error);
     }
+    window.location.reload()
     },
     updateMovie() {
         this.showModal = !this.showModal;
