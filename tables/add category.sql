@@ -16,10 +16,6 @@ ALTER TABLE movie
 ADD tailer TEXT;
 
 
-UPDATE movie
-SET rated = 0
-WHEN title = ''
-;
 
 ALTER TABLE movie
 ADD trailer TEXT;
