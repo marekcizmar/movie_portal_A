@@ -25,7 +25,7 @@ export default {
     async find() {
       await this.getData();
       const search = this.search;
-  
+
       switch (search) {
         case '0':
           this.filtered = this.moviesData
@@ -72,7 +72,14 @@ export default {
           );
           break;
         case '':
-          this.filtered = this.moviesData
+          if (this.selectedGenre<1) {
+            this.filtered = this.moviesData
+          } else {
+            this.filtered = this.moviesData.filter((movie) =>
+              movie.genre == this.selectedGenre 
+            );
+          }
+        
         
           break;
           
@@ -82,6 +89,7 @@ export default {
               movie.genre == search 
             );
           }else{
+            console.log(this.selectedGenre)
             this.filtered = this.moviesData.filter((movie) =>
               movie.genre == search || 
               movie.title.toLowerCase().includes(search) ||
@@ -111,6 +119,12 @@ export default {
       );
       this.search=''
     },
+    clear(){
+      this.selectedGenre=0
+      this.minimalYear=this.minYear
+      this.maximalYear=this.maxYear
+      this.find();
+    }
   },
   components: {
     AddMovie,
@@ -138,6 +152,9 @@ export default {
       
       console.log(this.minimalYear+' '+this.maximalYear);
       this.find(minValue,this.maximalYear)
+    },
+    clear(){
+      
     }
   },
   mounted() {
@@ -186,6 +203,9 @@ export default {
             </select>
           </div>
           
+        </div>
+        <div>
+          <button class="py-2 px-4 border border-slate-400 rounded m-4" @click="clear" >Clear All</button>
         </div>
       </div>
       <AddMovie 
