@@ -121,7 +121,7 @@ export default {
                 {{ movie.quality }}
             </div> 
         </span>
-        </div>
+    </div>
 
         <div v-if="showModal" class="bg-slate-100 container mx-auto shadow-2xl">
             <div class="flex flex-col justify-center mx-10">
@@ -165,7 +165,28 @@ export default {
             <button v-if="!showModal" class="btn-update-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded" @click="updateMoviesOnOff()">Update</button>            
         </span>
         <div v-if="showSumaty" class="absolute top-0 left-0 w-full h-[400rem] bg-black z-[900000] fixt justify-center opacity-50	 text-white">
-            {{movie.summary}}
+            <div class="relative">
+            <a href="" class=""><img class="shadow-lg w-48 h-72 hover:opacity-50 transition duration-150 ease-in-out" :src="movie.image" alt=""></a>
+            <div class="absolute h-72 top-0 opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
+                <div class="relative h-60">
+                    <p class="my-6 hover:cursor-default">{{ (movie.summary).slice(0, 120) }}...</p>
+                    <button @click="OnOffSumaty()" class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</button>
+                </div>
+            </div>
+        </div>
+        <span class="movie-footer mt-3 flex justify-center gap-8">
+            <div class="movie-relese-date self-end ">
+                {{ movie.year }}
+            </div>
+
+            <div class="movie-length table-cell self-end">
+                {{ movie.length }}min
+            </div>
+
+            <div class="movie-resolution table-cell self-end">
+                {{ movie.quality }}
+            </div> 
+        </span>
         </div>
 </template>
 
