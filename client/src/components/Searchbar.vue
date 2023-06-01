@@ -152,35 +152,40 @@ export default {
         <i class="fa fa-search text-white fa-lg"></i>
       </button>
     </div>
-    <form action="" class="flex justify-between mt-6">
-      <form action="" class="">
-        <select v-model="selectedGenre" id="genres" class="mt-4 py-2 px-4 border border-slate-400 rounded w-full">
-            <option value="0">All</option>
-            <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
-          </select>
-      </form>
-      <div>
-        <select id="YearsFrom" class="" v-model="minimalYear">
+    <form action="" class="flex justify-between mt-4">
+      <div class="flex">
+        <form action="" class="">
+          <select v-model="selectedGenre" id="genres" class="mt-4 py-2 px-4 border border-slate-400 rounded mr-6">
+              <option value="0">All</option>
+              <option v-for="genre in moviesGeners" :value="genre.id" :key="genre.id">{{ genre.title }}</option>
+            </select>
+        </form>
+        <div>
+          <select id="YearsFrom" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="minimalYear">
           <option value="0">FROM: {{ minYear }}</option>
           <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
         </select>
-        <select id="YearsTo" class="" v-model="maximalYear">
+      </div>
+    </div>
+      </form>
+      
+      <div>
+        <select id="YearsTo" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="maximalYear">
           <option value="0">TO: {{ maxYear }}</option>
           <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
         </select>
       </div>
-    </form>
+      <AddMovie 
+        :moviesGeners="moviesGeners"
+        :allYears="allYears"
+        :maxYear="maxYear"
+        :minYear="minYear"
+        :handleOnOffMovie="handleOnOffMovie"
+        :modal="modal"
+        :handleAddMovie="handleAddMovie"/>
+    
   </div>
-  <AddMovie 
-    :moviesGeners="moviesGeners"
-    :allYears="allYears"
-    :maxYear="maxYear"
-    :minYear="minYear"
-    :handleOnOffMovie="handleOnOffMovie"
-    :modal="modal"
-    :handleAddMovie="handleAddMovie"/>
-
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-14">
     <div
       class="film-container flex flex-wrap justify-center max-w-6xl"
       onsubmit="setTimeout(function(){window.location.reload();},10);"
