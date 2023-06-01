@@ -86,7 +86,7 @@ export default {
               movie.genre == search || 
               movie.title.toLowerCase().includes(search) ||
               movie.year == search ||
-              movie.summary.includes(search) ||
+              movie.summary.toLowerCase().includes(search) ||
               movie.quality == search ||
               movie.length+"min" == search ||
               movie.length+"m" == search
