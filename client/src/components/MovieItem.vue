@@ -16,7 +16,8 @@ export default {
             length: this.movie.length,
             trailer:this.movie.trailer,
             viewed:this.movie.viewed,
-            rated:this.movie.rated
+            rated:this.movie.rated,
+            showSumaty:false,
         }
     },
     props: ['moviesGeners','movie', 'viewMoreBooleanOnOff'],
@@ -78,6 +79,9 @@ export default {
                     console.error('Error adding movie:', error);
                 });
     },
+    OnOffSumaty(){
+        this.showSumaty=!this.showSumaty
+    },
     updateMoviesOnOff(){
         this.showModal = !this.showModal;
     },
@@ -100,7 +104,7 @@ export default {
             <div class="absolute h-72 top-0 opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
                 <div class="relative h-60">
                     <p class="my-6 hover:cursor-default">{{ (movie.summary).slice(0, 120) }}...</p>
-                    <button class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</button>
+                    <button @click="OnOffSumaty()" class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</button>
                 </div>
             </div>
         </div>
@@ -160,4 +164,24 @@ export default {
             <button v-if="!showModal" class="btn-remove-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded" @click="deleteFilm(movie)">Remove</button>
             <button v-if="!showModal" class="btn-update-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded" @click="updateMoviesOnOff()">Update</button>            
         </span>
+        <div v-if="showSumaty" class="absolute top-0 left-0 w-full h-[400rem] bg-black z-[900000] fixt justify-center opacity-50	 text-white">
+            {{movie.summary}}
+        </div>
 </template>
+
+<!-- /* .container {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 9999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; 
+  
+} */ -->
+
+
