@@ -12,6 +12,11 @@ export default {
           filtered:this.moviesData,
           selectedGenre:0,
           n:0,
+          minimalYear:0,
+          maximalYear:0,
+          min:0,
+          max:0
+
         };
     },props:['moviesGeners', 'allYears', 'maxYear', 'minYear','moviesData','handleOnOffMovie','modal','handleAddMovie','filtered','getData'],
 
@@ -73,13 +78,13 @@ export default {
       
     default:
     this.filtered = this.moviesData.filter((movie) => 
-    movie.title == search ||
-    movie.id == search ||
+    movie.title.toLowerCase().includes(search.toLowerCase()) ||
     movie.year == search ||
     movie.genre == search ||
-    movie.summary == search ||
-    movie.quality == search ||
-    movie.length == search
+    movie.summary.toLowerCase().includes(search.toLowerCase()) ||
+    movie.quality.toLowerCase() == search.toLowerCase() ||
+    movie.length+"min" == search ||
+    movie.length+"m" == search
   );
       break;
   }
@@ -87,9 +92,20 @@ export default {
   for (let index = 0; index < this.filtered.length; index++) {
     console.log(this.filtered[index].title);
   }
+  
+  if (this.minimalYear<=1) {
+    this.minimalYear=2015
+  }
+  if (this.maximalYear<=1) {
+    this.maximalYear=2022
+  }
+  this.filtered = this.filtered.filter((movie) => 
+    movie.year >= this.minimalYear &&
+    movie.year <= this.maximalYear 
+  );
   this.search=''
 },
-
+ 
 
   },
   components: {
@@ -107,7 +123,18 @@ export default {
             console.log(newValue);
             this.search=newValue
             this.find(newValue);
-        },
+    },
+    maximalYear(maxValue){
+      
+      console.log(this.minimalYear+' '+maxValue);
+      this.find(this.minimalYear,maxValue)
+    },
+    minimalYear(minValue){
+
+      
+      console.log(this.minimalYear+' '+this.maximalYear);
+      this.find(minValue,this.maximalYear)
+    }
   },
   mounted() {
     this.find(); 
@@ -133,13 +160,13 @@ export default {
           </select>
       </form>
       <div>
-        <select id="YearsFrom" class="">
+        <select id="YearsFrom" class="" v-model="minimalYear">
           <option value="0">FROM: {{ minYear }}</option>
-          <option v-for="year in allYears" :value="year">{{ year }}</option>
+          <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
         </select>
-        <select id="YearsTo" class="">
+        <select id="YearsTo" class="" v-model="maximalYear">
           <option value="0">TO: {{ maxYear }}</option>
-          <option v-for="year in allYears" :value="year">{{ year }}</option>
+          <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
         </select>
       </div>
     </form>
