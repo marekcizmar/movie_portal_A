@@ -26,87 +26,92 @@ export default {
       await this.getData();
       const search = this.search;
   
-  switch (search) {
-    case '0':
-    this.filtered = this.moviesData
-    break;
-    case 'akcion':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 1 
-    );
-      console.log(this.search)
-      break;
-    case 'fantasi':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 2
-    );
-      break;
-    case 'horror':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 3 
-    );
-      break;
-    case 'science fiction':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 4 
-    );
-      break;
-    case 'mystery':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 5 
-    );
-      break;
-    case 'comedy':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 6 
-    );
-      break;
-    case 'thriller':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 7 
-    );
-      break;
-    case 'animated':
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.genre == 8 
-    );
-      break;
-      case '':
-    this.filtered = this.moviesData
-    
-      break;
+      switch (search) {
+        case '0':
+          this.filtered = this.moviesData
+        break;
+        case 'akcion':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 1 
+          );
+          console.log(this.search)
+          break;
+        case 'fantasi':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 2
+          );
+          break;
+        case 'horror':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 3 
+          );
+          break;
+        case 'science fiction':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 4 
+          );
+          break;
+        case 'mystery':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 5 
+          );
+          break;
+        case 'comedy':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 6 
+          );
+          break;
+        case 'thriller':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 7 
+          );
+          break;
+        case 'animated':
+          this.filtered = this.moviesData.filter((movie) => 
+            movie.genre == 8 
+          );
+          break;
+        case '':
+          this.filtered = this.moviesData
+        
+          break;
+          
+        default:
+          if (search<=8) {
+            this.filtered = this.moviesData.filter((movie) =>
+              movie.genre == search 
+            );
+          }else{
+            this.filtered = this.moviesData.filter((movie) =>
+              movie.genre == search || 
+              movie.title.toLowerCase().includes(search) ||
+              movie.year == search ||
+              movie.summary.includes(search) ||
+              movie.quality == search ||
+              movie.length+"min" == search ||
+              movie.length+"m" == search
+            );
+          }
+          break;
+      }
       
-    default:
-    this.filtered = this.moviesData.filter((movie) => 
-    movie.title.toLowerCase().includes(search) ||
-    movie.year == search ||
-    movie.genre == search ||
-    movie.summary.includes(search) ||
-    movie.quality == search ||
-    movie.length+"min" == search ||
-    movie.length+"m" == search
-  );
-      break;
-  }
-  
-  for (let index = 0; index < this.filtered.length; index++) {
-    console.log(this.filtered[index].title);
-  }
-  
-  if (this.minimalYear<=1) {
-    this.minimalYear=2015
-  }
-  if (this.maximalYear<=1) {
-    this.maximalYear=2022
-  }
-  this.filtered = this.filtered.filter((movie) => 
-    movie.year >= this.minimalYear &&
-    movie.year <= this.maximalYear 
-  );
-  this.search=''
-},
- 
-
+      for (let index = 0; index < this.filtered.length; index++) {
+        console.log(this.filtered[index].title + ' ' + this.filtered[index].genre);
+      }
+      let  min = this.minimalYear;
+      let  max = this.maximalYear;
+      if (min<=1) {
+        min=2015
+      }
+      if (max<=1) {
+        max=2022
+      }
+      this.filtered = this.filtered.filter((movie) => 
+        movie.year >= min &&
+        movie.year <= max 
+      );
+      this.search=''
+    },
   },
   components: {
     AddMovie,
