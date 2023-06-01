@@ -78,7 +78,7 @@ export default {
       
     default:
     this.filtered = this.moviesData.filter((movie) => 
-    movie.title.toLowerCase().includes(search.toLowerCase()) ||
+    movie.title.toLowerCase().includes(search) ||
     movie.year == search ||
     movie.genre == search ||
     movie.summary.toLowerCase().includes(search.toLowerCase()) ||
