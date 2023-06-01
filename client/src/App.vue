@@ -169,7 +169,7 @@ export default {
       class="film-container flex flex-wrap justify-center max-w-6xl"
       onsubmit="setTimeout(function(){window.location.reload();},10);"
     >
-      <MovieCard :moviesData="moviesData" :moviesGeners="moviesGeners" />
+      
     </div>
   </div>
   <Pages />
