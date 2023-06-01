@@ -98,17 +98,16 @@ export default {
       for (let index = 0; index < this.filtered.length; index++) {
         console.log(this.filtered[index].title + ' ' + this.filtered[index].genre);
       }
-      let  min = this.minimalYear;
-      let  max = this.maximalYear;
-      if (min<=1) {
-        min=2015
+      
+      if (this.minimalYear<=1) {
+        this.minimalYear=this.minYear
       }
-      if (max<=1) {
-        max=2022
+      if (this.maximalYear<=1) {
+        this.maximalYear=this.maxYear
       }
       this.filtered = this.filtered.filter((movie) => 
-        movie.year >= min &&
-        movie.year <= max 
+        movie.year >= this.minimalYear &&
+        movie.year <= this.maximalYear 
       );
       this.search=''
     },
