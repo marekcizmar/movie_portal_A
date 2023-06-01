@@ -164,16 +164,14 @@ export default {
           <select id="YearsFrom" class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2" v-model="minimalYear">
           <option value="0">FROM: {{ minYear }}</option>
           <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
-        </select>
-      </div>
-    </div>
-      </form>
-      
-      <div>
-        <select id="YearsTo" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="maximalYear">
-          <option value="0">TO: {{ maxYear }}</option>
-          <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
-        </select>
+          </select>
+        </div>
+        <div>
+          <select id="YearsTo" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="maximalYear">
+            <option value="0">TO: {{ maxYear }}</option>
+            <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
+          </select>
+        </div>
       </div>
       <AddMovie 
         :moviesGeners="moviesGeners"
@@ -183,13 +181,10 @@ export default {
         :handleOnOffMovie="handleOnOffMovie"
         :modal="modal"
         :handleAddMovie="handleAddMovie"/>
-    
+    </form>
   </div>
-    <div class="flex justify-center mt-14">
-    <div
-      class="film-container flex flex-wrap justify-center max-w-6xl"
-      onsubmit="setTimeout(function(){window.location.reload();},10);"
-    >
+  <div class="flex justify-center mt-14">
+    <div class="film-container flex flex-wrap justify-center max-w-6xl" onsubmit="setTimeout(function(){window.location.reload();},10);">
       <MovieCard :moviesData="this.filtered" :moviesGeners="moviesGeners" />
     </div>
   </div>
