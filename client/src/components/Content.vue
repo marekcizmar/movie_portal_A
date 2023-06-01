@@ -54,13 +54,10 @@
             'button-darkblue': activeTab !== 'tab4'
           }" 
           @click="activeTab = 'tab4'"
-          
           class="relative top-[70px] bg-blue-900 h-16 w-48 rounded-r-md text-white hover:bg-blue-950 transition">
-          
           3. TOP RATED
         </button>
       </div>
-
       <div v-if="activeTab === 'tab3'" class="relative left-48 flex justify-center">
         <div class="border-blue-900 border-4 bg-blue-900 border-15px2 shadow-xl">
           <iframe width="840" height="472" src="https://www.youtube.com/embed/NmzuHjWmXOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -78,13 +75,10 @@
             'button-darkblue': activeTab !== 'tab4'
           }" 
           @click="activeTab = 'tab4'"
-          
           class="relative top-[70px] -left-[192px] bg-blue-900 h-16 w-48 rounded-r-md text-white hover:bg-blue-950 transition">
-          
           3. TOP RATED
         </button>
       </div>
-
       <div v-if="activeTab === 'tab4'" class="relative left-48 flex justify-center">
         <div class="border-blue-900 border-4 bg-blue-900 border-15px2 shadow-xl">
           <iframe width="840" height="472" src="https://www.youtube.com/embed/6ZfuNTqbHE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -102,13 +96,10 @@
             'button-darkblue': activeTab !== 'tab4'
           }" 
           @click="activeTab = 'tab4'"
-          
           class="relative top-[70px] -left-[192px] bg-blue-900 h-16 w-48 rounded-r-md text-white hover:bg-blue-950 transition">
-          
           3. TOP RATED
         </button> 
       </div>
-
       <div v-if="activeTab === 'tab5'" class="relative left-48 flex justify-center">
         <div class="border-[16px] bg-blue-400 border-blue-400 shadow-xl">
           <iframe width="840" height="472" src="https://www.youtube.com/embed/jWM0ct-OLsM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -126,9 +117,7 @@
           @click="activeTab = 'tab6'" 
           class="relative top-[70px] -left-[192px] bg-blue-400 h-16 w-48 rounded-r-md text-white hover:bg-blue-500 transition">3. MOST WATCHED</button>   
       </div>
-
       <div v-if="activeTab === 'tab6'" class="relative left-48 flex justify-center text-right">
-      
         <div class="border-[16px] bg-blue-400 border-blue-400 shadow-xl">
           <iframe width="840" height="472" src="https://www.youtube.com/embed/ONHBaC-pfsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>           
         </div> 
@@ -144,9 +133,8 @@
             'button-lightblue': activeTab !== 'tab6'
           }" 
           @click="activeTab = 'tab6'" 
-          class="relative top-[70px] -left-[192px] bg-blue-400 h-16 w-48  rounded-r-md text-white hover:bg-blue-500 transition-all">3. MOST WATCHED</button>   
-        
-      </div>
+          class="relative top-[70px] -left-[192px] bg-blue-400 h-16 w-48  rounded-r-md text-white hover:bg-blue-500 transition-all">3. MOST WATCHED</button>
+        </div>
     </div>
   </template>
   
