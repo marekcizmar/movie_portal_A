@@ -18,10 +18,7 @@ export default {
     },
     
     props: ['moviesGeners', 'moviesData','handleOnOffMovie','modal','handleAddMovie'],
-    methods: {
-        
-        
-        
+    methods: { 
     },
     
     watch: {
@@ -37,7 +34,7 @@ export default {
 
 <template>
     <div class="">
-        <div v-if="modal()" class="bg-slate-100 container mx-auto w-1/3 shadow-2xl">
+        <div v-if="modal()" class="bg-slate-100 container mx-auto shadow-2xl">
             <div class="flex flex-col justify-center  mx-10">
                 <label class="mt-5">Film title</label>
                 <input type="text" v-model="title" id="title" class="mt-4 py-2 px-4 border border-slate-400 rounded" placeholder="Type in a movie name">
@@ -76,6 +73,6 @@ export default {
     </div>
         
     <div class="">
-        <button v-if="!modal()" class="btn-add-movie bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-500 rounded m-5 ml-20" @click="handleOnOffMovie">Add Movie</button>
+        <button v-if="!modal()" class="px-6 py-3 bg-green-400 border border-green-600 hover:bg-green-300 hover:shadow-lg rounded-md transition duration-150 ease-in-out text-white" @click="handleOnOffMovie">Add Movie</button>
     </div>
 </template>

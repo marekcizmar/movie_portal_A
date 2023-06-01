@@ -19,7 +19,7 @@ export default {
             rated:this.movie.rated
         }
     },
-    props: ['moviesGeners','movie'],
+    props: ['moviesGeners','movie', 'viewMoreBooleanOnOff'],
     methods: {
         async getData(){
             const res = await fetch('http://localhost:5000/movie')
@@ -99,7 +99,7 @@ export default {
             <div class="absolute h-72 top-0 opacity-0 bg-blue-900 hover:opacity-100 transition duration-300 ease-in-out px-5 text-center text-white text-sm ">
                 <div class="relative h-60">
                     <p class="my-6">{{ (movie.summary).slice(0, 120) }}...</p>
-                    <a href="" class=""><p class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</p></a>
+                    <button :on-click="viewMoreBooleanOnOff()" class="absolute bottom-0 right-0 left-0 text-center py-2 rounded-md bg-blue-400 hover:bg-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition duration-150 ease-in-out">View more</button>
                 </div>
             </div>
         </div>

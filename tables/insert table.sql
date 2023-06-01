@@ -53,6 +53,6 @@ INSERT INTO movie(title, year, genre, summary, image,quality,"length",trailer) V
 																					('Black Widow',2021,4,'Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.','https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/165/514/165514204_70f7c8.jpg','FHD',134,'https://www.youtube.com/watch?v=ybji16u608U'),
 																					('Tomb Raider',2018,1,'Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.','https://m.media-amazon.com/images/M/MV5BOTY4NDcyZGQtYmVlNy00ODgwLTljYTMtYzQ2OTE3NDhjODMwXkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_FMjpg_UX1000_.jpg','FHD',118,'https://www.youtube.com/watch?v=8ndhidEmUbI');
 
-INSERT INTO genre(title) VALUES('akcion'),('fantasi'),('horror'),('science fiction'),('mystery'),('comedy'),('thriller'),('animated');
+INSERT INTO genre(title) VALUES('Action'),('Fantasy'),('Horror'),('Science fiction'),('Mystery'),('Comedy'),('Thriller'),('Animated');
 
 
