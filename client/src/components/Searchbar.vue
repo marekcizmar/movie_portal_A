@@ -81,8 +81,8 @@ export default {
     movie.title.toLowerCase().includes(search) ||
     movie.year == search ||
     movie.genre == search ||
-    movie.summary.toLowerCase().includes(search.toLowerCase()) ||
-    movie.quality.toLowerCase() == search.toLowerCase() ||
+    movie.summary.includes(search) ||
+    movie.quality == search ||
     movie.length+"min" == search ||
     movie.length+"m" == search
   );
@@ -161,7 +161,7 @@ export default {
             </select>
         </form>
         <div>
-          <select id="YearsFrom" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="minimalYear">
+          <select id="YearsFrom" class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2" v-model="minimalYear">
           <option value="0">FROM: {{ minYear }}</option>
           <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
         </select>
