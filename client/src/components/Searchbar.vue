@@ -12,8 +12,8 @@ export default {
           filtered:this.moviesData,
           selectedGenre:0,
           n:0,
-          minimalYear:0,
-          maximalYear:0,
+          minimalYear:this.minYear,
+          maximalYear:this.maxYear,
           min:0,
           max:0
 
@@ -166,16 +166,23 @@ export default {
             </select>
         </form>
         <div>
-          <select id="YearsFrom" class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2" v-model="minimalYear">
-          <option value="0">FROM: {{ minYear }}</option>
+          <div class="mt-4 py-2 px-4 border border-slate-400 rounded mr-2">
+            FROM:
+          <select id="YearsFrom"  v-model="minimalYear">
+          <!-- <option value="0">{{ minYear }}</option> -->
           <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
           </select>
         </div>
+        </div>
         <div>
-          <select id="YearsTo" class="mt-4 py-2 px-4 border border-slate-400 rounded" v-model="maximalYear">
-            <option value="0">TO: {{ maxYear }}</option>
+          <div class="mt-4 py-2 px-4 border border-slate-400 rounded">
+            TO: 
+            <select id="YearsTo"  v-model="maximalYear">
+            <!-- <option value="0">{{ maxYear }}</option> -->
             <option v-for="year in allYears" :value="year" :key="year">{{ year }}</option>
           </select>
+          </div>
+          
         </div>
       </div>
       <AddMovie 
